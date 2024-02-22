@@ -1,0 +1,268 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  
+}
+.hero-container {
+  background-image: url(assets/images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90vh;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: blur(1px);
+}
+.h1 {
+  color: black;
+}
+
+.about-container {
+  min-height: 50vh;
+  padding: 10px;
+  margin: 10px;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+}
+.about-mainbox {
+  display: flex;
+
+  width: 1475px;
+  height: 300px;
+}
+
+.minibox {
+  flex: 1;
+  width: auto;
+  height: auto;
+}
+
+.column {
+  margin: 0 10px;
+} */
+
+.playlist {
+  display: flex;
+  width: auto;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+
+.playlistbox {
+  width: 180px;
+  height: 250px;
+  margin: 30px;
+  color: white;
+}
+
+.playlistbox img {
+  width: 230px;
+  height: 280px;
+}
+
+.viewmain-box {
+  display: flex;
+  height: 1000;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.bookbox {
+  display: flex;
+
+  width: fit-content;
+}
+
+footer .scale {
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 1000px) {
+  .playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-box.playlist {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .viewmain-box {
+    width: 100%;
+  }
+
+  .navigation-buttons {
+    margin-top: 10px;
+  }
+
+  .navigation-buttons button {
+    margin: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navigation-buttons {
+    flex-direction: column;
+  }
+}
+
+/* new */
+.pdf-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.pdf-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border: 5px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.pdf-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdf-controls button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-controls button:hover {
+  background-color: #555;
+}
+
+.pdf-controls button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pdf-controls .page-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pdf-controls .theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.pdf-controls .theme-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.pdf-controls .theme-toggle label {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #ddd;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-controls .theme-toggle label::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.pdf-controls .theme-toggle input[type="checkbox"]:checked + label::before {
+  transform: translateX(100%);
+}
+
+.pdf-controls .settings-button {
+  background-color: #444;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-controls .settings-button:hover {
+  background-color: #666;
+}
+
+.pdf-controls .settings-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: none;
+}
+
+.pdf-controls .settings-menu.open {
+  display: block;
+}
+
+.pdf-controls .settings-menu a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-controls .settings-menu a:hover {
+  background-color: #f2f2f2;
+}
+
+.pdf-controls .settings-menu a.active {
+  background-color: #e0e0e0;
+}
